@@ -1,0 +1,24 @@
+git clone https://github.com/danielfone/rails-templates.git
+
+rails generate scaffold Location name:string description:text 
+
+rails new apv -T -m ~/Dokumenter/workspace/rails-templates/default-prototype.rb
+cd apv
+echo "2.1.1" > .ruby-version
+bundle install
+
+#rails generate scaffold Reimbursement reference:string payee:references comments:text data:text
+rails generate scaffold Person role:string name:string 
+rails generate scaffold Location name:string description:text 
+rails generate scaffold Material name:string 
+rails generate scaffold DataLetter titel:string text:text material:references 
+rake db:migrate
+
+#add material validation and fix view to show name
+
+rm app/assets/stylesheets/scaffolds.css.scss
+rails generate bootstrap:themed Reimbursements
+rails generate bootstrap:themed Employees
+
+rails server
+
