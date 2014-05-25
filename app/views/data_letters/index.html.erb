@@ -15,7 +15,7 @@
       <tr>
         <td><%= data_letter.titel %></td>
         <td><%= data_letter.text %></td>
-        <td><%= data_letter.material %></td>
+        <td><%= data_letter.material.name %></td>
         <td><%= link_to 'Show', data_letter %></td>
         <td><%= link_to 'Edit', edit_data_letter_path(data_letter) %></td>
         <td><%= link_to 'Destroy', data_letter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
