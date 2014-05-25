@@ -14,13 +14,13 @@
   <div class="control-group">
     <%= f.label :material_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :material_id, :class => 'text_field' %>
+      <%= f.collection_select :material_id, Material.all, :id, :name, prompt: 'Select material...' %>
     </div>
   </div>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                data_letter_path, :class => 'btn' %>
+                data_letters_path, :class => 'btn' %>
   </div>
 <% end %>

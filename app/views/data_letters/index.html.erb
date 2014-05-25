@@ -19,7 +19,7 @@
         <td><%= link_to data_letter.id, data_letter_path(data_letter) %></td>
         <td><%= data_letter.titel %></td>
         <td><%= data_letter.text %></td>
-        <td><%= data_letter.material_id %></td>
+        <td><%= data_letter.material_name %></td>
         <td><%=l data_letter.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
