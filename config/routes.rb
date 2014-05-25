@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :data_letters
+
   resources :materials
 
   resources :locations
