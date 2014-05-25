@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140522192323) do
+ActiveRecord::Schema.define(version: 20140525143655) do
+
+  create_table "data_letters", force: true do |t|
+    t.string   "titel"
+    t.text     "text"
+    t.integer  "material_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "data_letters", ["material_id"], name: "index_data_letters_on_material_id"
+
+  create_table "locations", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "materials", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "people", force: true do |t|
     t.string   "role"

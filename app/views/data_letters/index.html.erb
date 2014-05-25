@@ -1,0 +1,29 @@
+<h1>Listing data_letters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titel</th>
+      <th>Text</th>
+      <th>Material</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @data_letters.each do |data_letter| %>
+      <tr>
+        <td><%= data_letter.titel %></td>
+        <td><%= data_letter.text %></td>
+        <td><%= data_letter.material %></td>
+        <td><%= link_to 'Show', data_letter %></td>
+        <td><%= link_to 'Edit', edit_data_letter_path(data_letter) %></td>
+        <td><%= link_to 'Destroy', data_letter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Data letter', new_data_letter_path %>

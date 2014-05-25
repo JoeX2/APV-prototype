@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titel:</strong>
+  <%= @data_letter.titel %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @data_letter.text %>
+</p>
+
+<p>
+  <strong>Material:</strong>
+  <%= @data_letter.material %>
+</p>
+
+<%= link_to 'Edit', edit_data_letter_path(@data_letter) %> |
+<%= link_to 'Back', data_letters_path %>
