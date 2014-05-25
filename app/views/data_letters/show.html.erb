@@ -1,19 +1,25 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = DataLetter -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Titel:</strong>
-  <%= @data_letter.titel %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:titel) %>:</strong></dt>
+  <dd><%= @data_letter.titel %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:text) %>:</strong></dt>
+  <dd><%= @data_letter.text %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:material_id) %>:</strong></dt>
+  <dd><%= @data_letter.material_id %></dd>
+</dl>
 
-<p>
-  <strong>Text:</strong>
-  <%= @data_letter.text %>
-</p>
-
-<p>
-  <strong>Material:</strong>
-  <%= @data_letter.material.name %>
-</p>
-
-<%= link_to 'Edit', edit_data_letter_path(@data_letter) %> |
-<%= link_to 'Back', data_letters_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              data_letter_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_data_letter_path(@data_letter), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              data_letter_path(@data_letter),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

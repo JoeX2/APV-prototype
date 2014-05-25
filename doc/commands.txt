@@ -14,11 +14,15 @@ rails generate scaffold Material name:string
 rails generate scaffold DataLetter titel:string text:text material:references 
 rake db:migrate
 
-#add material validation and fix view to show name
+#add material validation 
 
 rm app/assets/stylesheets/scaffolds.css.scss
-rails generate bootstrap:themed Reimbursements
-rails generate bootstrap:themed Employees
+rails generate bootstrap:themed People
+rails generate bootstrap:themed Locations
+rails generate bootstrap:themed Materials
+rails generate bootstrap:themed DataLetters
+
+# fix view to show name of material in dataletters
 
 rails server
 
