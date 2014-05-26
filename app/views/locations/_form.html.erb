@@ -12,9 +12,26 @@
     </div>
   </div>
 
+  <fieldset>
+    <legend>Materials</legend>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <%- @location.materials << Material.new -%>
+      <%= f.fields_for :materials do |m| %>
+        <tr>
+          <td><%= m.text_field :name %><td>
+        </tr>
+      <%- end -%>
+    </table>
+  </fieldset>
+
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+    <%#= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 location_path, :class => 'btn' %>
   </div>
 <% end %>

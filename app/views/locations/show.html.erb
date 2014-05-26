@@ -10,6 +10,23 @@
   <dd><%= @location.description %></dd>
 </dl>
 
+<h3>Materials</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <%- @location.materials.each do |m| %>
+    <tr>
+      <td><%= m.name %></td>
+    </tr>
+  <%- end %>
+</table>
+<%- if @location.materials.none? -%>
+  <p class="muted">No materials</p>
+<% end %>
+
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               location_path, :class => 'btn'  %>
