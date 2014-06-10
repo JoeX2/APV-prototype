@@ -47,3 +47,5 @@ group :production do
   gem "thin"
   gem "rails_12factor"
 end
+
+gem 'dropzonejs-rails'

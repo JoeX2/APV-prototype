@@ -6,4 +6,9 @@ class DataLetter < ActiveRecord::Base
   def material_name
     material.name
   end
+
+  def file= attachment
+    puts "hellow"
+    puts attachment.class.to_s
+  end
 end

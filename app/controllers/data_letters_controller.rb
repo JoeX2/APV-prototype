@@ -40,6 +40,7 @@ class DataLettersController < ApplicationController
   # PATCH/PUT /data_letters/1
   # PATCH/PUT /data_letters/1.json
   def update
+    puts "Hi file: " + params[:file].to_s
     respond_to do |format|
       if @data_letter.update(data_letter_params)
         format.html { redirect_to @data_letter, notice: 'Data letter was successfully updated.' }

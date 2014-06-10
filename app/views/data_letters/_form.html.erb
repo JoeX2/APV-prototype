@@ -1,4 +1,4 @@
-<%= form_for @data_letter, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @data_letter, :html => { :class => 'form-horizontal dropzone dropzone-previews dz-clickable' } do |f| %>
   <div class="control-group">
     <%= f.label :titel, :class => 'control-label' %>
     <div class="controls">
@@ -18,9 +18,16 @@
     </div>
   </div>
 
+
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 data_letters_path, :class => 'btn' %>
   </div>
 <% end %>
+
+<script>
+Dropzone.options.edit_data_letter_<%= @data_letter.id %> = {
+  paramName: "data_letter[file]", // The name that will be used to transfer the file
+};
+</script>
