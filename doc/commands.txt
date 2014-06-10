@@ -27,3 +27,8 @@ rails generate bootstrap:themed DataLetters
 
 rails server
 
+#For DropZone
+echo "gem 'dropzonejs-rails'" >> Gemfile
+echo "//= require dropzone" >> app/assets/javascripts/application.js
+echo " *= require dropzone/basic" >> app/assets/stylesheets/application.css
+
