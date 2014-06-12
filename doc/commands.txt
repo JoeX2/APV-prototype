@@ -1,3 +1,7 @@
+sudo apt-get install curl
+curl -sSL https://get.rvm.io | bash -s stable --rails
+source ~/.rvm/scripts/rvm
+
 git clone https://github.com/aescaffre/nuxeo-customer_information_management-js.git
 git clone https://github.com/danielfone/rails-templates.git
 
